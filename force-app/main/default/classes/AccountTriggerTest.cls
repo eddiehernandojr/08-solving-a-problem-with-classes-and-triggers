@@ -2,7 +2,7 @@
 // Test classes can be either private or public. 
 // If you’re using a test class for unit testing only, declare it as private. 
 // Public test classes are typically used for test data factory classes.
-private class AccountTriggerHandlerTest {
+private class AccountTriggerTest {
 
     // Records that are created in a test setup method are available to all test methods 
     // in the test class and are rolled back at the end of test class execution. 
