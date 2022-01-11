@@ -18,6 +18,7 @@ private class AccountTriggerTest {
         Test.stopTest();
         
         // TODO1: add check if Campaign details are correct
+        // TODO2: add more tests
         List<Campaign> camps = [SELECT Id FROM Campaign];       
         System.assertEquals(151, camps.size(), 'The actual size is ' + camps.size());
         System.assert(result[0].isSuccess());
@@ -55,7 +56,7 @@ private class AccountTriggerTest {
         List<Account> accts = new List<Account>();
 
         for (Integer i = 0; i < 151; i++) {
-            // TODO2: remove Type, Industry, and Phone when you move this to a new org
+            // TODO3: remove Type, Industry, and Phone when you move this to a new org
             accts.add(new Account(Name = 'Test Account' + i, 
                             Type = 'Prospect', 
                             Industry = 'Agriculture', 
