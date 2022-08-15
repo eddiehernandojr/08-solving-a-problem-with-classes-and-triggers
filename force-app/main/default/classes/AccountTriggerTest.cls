@@ -19,10 +19,15 @@ private class AccountTriggerTest {
         
         // TODO1: add check if Campaign details are correct
         // TODO2: add more tests
-        List<Campaign> camps = [SELECT Id FROM Campaign];       
+        List<Campaign> camps = [SELECT Id, Type, StartDate, EndDate, BudgetedCost FROM Campaign];       
         System.assertEquals(151, camps.size(), 'The actual size is ' + camps.size());
         System.assert(result[0].isSuccess());
         System.assert(result[0].getErrors().size() == 0);
+
+        System.assertEquals('Webinar', camps[0].Type, 'The actual Type is ' + camps[0].Type);
+        System.assertEquals(Date.today().addDays(14), camps[0].StartDate, 'The actual Start Date is ' + camps[0].StartDate);
+        System.assertEquals(Date.today().addDays(14), camps[0].EndDate, 'The actual End Date is ' + camps[0].EndDate);
+        System.assertEquals(1000, camps[0].BudgetedCost, 'The actual Budgeted Cost is ' + camps[0].BudgetedCost);
     }
 
     @isTest

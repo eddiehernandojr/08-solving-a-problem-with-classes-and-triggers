@@ -7,8 +7,8 @@ public class AccountTriggerHandler {
                 camps.add(new Campaign(Name = 'Webinar for New Customer', 
                                     Type = 'Webinar', 
                                     Status = 'Planned', 
-                                    StartDate = Date.today() + 14, 
-                                    EndDate = Date.today() + 14, 
+                                    StartDate = Date.today().addDays(14), 
+                                    EndDate = Date.today().addDays(14), 
                                     IsActive = true, 
                                     BudgetedCost = acct.AnnualRevenue * 0.01));
             }
